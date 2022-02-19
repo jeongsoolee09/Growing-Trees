@@ -18,9 +18,12 @@ class App {
         this.stageWidth = document.body.clientWidth;
         this.stageHeight = document.body.clientHeight;
 
-        this.canvas.width = this.stageWidth * this.pixelRatio;
-        this.canvas.height = this.stageHeight * this.pixelRatio;
-        this.ctx.scale(this.pixelRatio, this.pixelRatio);
+        // this.canvas.width = this.stageWidth * this.pixelRatio;
+        // this.canvas.height = this.stageHeight * this.pixelRatio;
+        this.canvas.width = this.stageWidth;
+        this.canvas.height = this.stageHeight;
+        // this.ctx.scale(this.pixelRatio, this.pixelRatio);
+        this.ctx.scale(1, 1);
 
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
     }
