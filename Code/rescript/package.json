@@ -1,0 +1,12 @@
+{
+    "devDependencies": {
+        "rescript": "^9.1.4"
+    },
+    "scripts": {
+        "re:build": "rescript",
+        "re:start": "rescript build -w"
+    },
+    "dependencies": {
+        "rescript-webapi": "^0.6.1"
+    }
+}
