@@ -1,9 +1,14 @@
 {
+    "name": "growing-trees-rescript",
+    "version": "1.0.0",
+    "private": true,
     "devDependencies": {
-        "rescript": "^9.1.4"
+        "rescript": "^9.1.4",
+        "webpack": "^5.72.1",
+        "webpack-cli": "^4.9.2"
     },
     "scripts": {
-        "re:build": "rescript",
+        "re:build": "rescript build && npx webpack",
         "re:start": "rescript build -w"
     },
     "dependencies": {

@@ -1,17 +1,15 @@
 {
     "name": "Growing-Trees",
-    "sources": [
-        {
-            "dir": "src",
-            "subdirs": true
-        }
-    ],
-    "package-specs": [
-        {
-            "module": "es6",
-            "in-source": true
-        }
-    ],
+    "version": "0.0.1",
+    "namespace": true,
+    "sources": {
+        "dir": "src",
+        "subdirs": true
+    },
+    "package-specs": {
+        "module": "es6",
+        "in-source": true
+    },
     "suffix": ".bs.js",
     "bs-dependencies": [
         "rescript-webapi"

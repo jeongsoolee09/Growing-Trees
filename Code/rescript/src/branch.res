@@ -4,8 +4,10 @@ open Belt
 type t = {
   startX: float,
   startY: float,
+
   endX: float,
   endY: float,
+
   color: string,
   lineWidth: int,
 

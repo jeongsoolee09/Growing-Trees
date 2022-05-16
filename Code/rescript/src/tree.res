@@ -90,8 +90,8 @@ let init = (posX, posY) : t => {
         List.reverse(acc)
       } else {
         let len = depth == 0 ? random(10, 13) : random(0, 11)
-        let endX = startX +. cos(angle) *. len *. (Float.fromInt (depth - currDepth))
-        let endY = startY +. sin(angle) *. len *. (Float.fromInt (depth - currDepth))
+        let endX = startX +. cos(angle) *. len *. (Float.fromInt(depth - currDepth))
+        let endY = startY +. sin(angle) *. len *. (Float.fromInt(depth - currDepth))
 
         let newBranch = Branch.init(startX, startY, endX, endY, depth - currDepth)
         let newAcc = List.add(acc, list{newBranch})
@@ -100,7 +100,10 @@ let init = (posX, posY) : t => {
         append(newBranches1, newBranches2)
       }
 
+
   let branches = createBranch(posX, posY, -90., 0, list{})
+
+  Js.Console.log(Branch.llToString(branches))
 
   {
     posX: posX,
