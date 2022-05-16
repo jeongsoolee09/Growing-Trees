@@ -50,17 +50,12 @@ let clickHandler = (event: Event.t) : unit => {
 
 
 let main = (event: Event.t) : unit => {
-  let documentBodyAsDocument : Document.t =
-    documentBody
-    -> Element.asNode
-    -> Document.ofNode
-    -> Option.getExn
-  Document.appendChild(documentBodyAsDocument, ~child=canvas);
+  Element.appendChild(documentBody, ~child=canvas)
 
-  Window.addEventListener(window, "resize", resizeHandler);
-  Window.addEventListener(window, "click", clickHandler);
+  Window.addEventListener(window, "resize", resizeHandler)
+  Window.addEventListener(window, "click", clickHandler)
 
-  resizeHandler(event);
+  resizeHandler(event)
 }
 
 
