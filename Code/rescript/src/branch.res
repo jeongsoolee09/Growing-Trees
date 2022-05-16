@@ -19,6 +19,33 @@ type t = {
   currentY: float
 }
 
+
+let toString = (branch: t) : string => {
+  let startX = Float.toString(branch.startX)
+  let startY = Float.toString(branch.startY)
+  let endX = Float.toString(branch.endX)
+  let endY = Float.toString(branch.endY)
+  let frame = Int.toString(branch.frame)
+  j`<branch position: ($startX, $startY) => ($endX, $endY), frame: $frame>`
+}
+
+
+let listToString = (branches: list<t>) : string => {
+  let acc = List.reduce(branches, "", (acc, branch) =>
+    acc ++ toString(branch) ++ ", "
+  )
+  j`[$acc]`
+}
+
+
+let llToString = (branchListList: list<list<t>>) : string => {
+  let acc = List.reduce(branchListList, "", (acc, branchList) =>
+    acc ++ listToString(branchList) ++ ", "
+  )
+  j`[$acc]`
+}
+
+
 let init = (startX, startY, endX, endY, lineWidth) : t => {
   let color = "#000000"
   let frame = 10

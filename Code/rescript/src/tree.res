@@ -11,6 +11,14 @@ type t = {
 }
 
 
+let toString = (tree: t) : string => {
+  let posX = Float.toString(tree.posX)
+  let posY = Float.toString(tree.posY)
+  let branches = Branch.llToString(tree.branches)
+  j`<position: ($posX, $posY), branches: $branches>`
+}
+
+
 let append = (list1: list<'a>, list2: list<'a>) : list<'a> => {
   let rec inner = (acc, current) =>
       switch current {
@@ -73,7 +81,6 @@ let random = (min: int, max: int) : float =>
                                     (Float.fromInt (max - min + 1))))
 
 
-// TODO under construction: not tested
 let init = (posX, posY) : t => {
   let currDepth = 11
   let cntDepth = 0
