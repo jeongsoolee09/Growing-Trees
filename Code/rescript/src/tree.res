@@ -10,11 +10,15 @@ type t = {
   cntDepth: int,
 }
 
-let rec append = (list1: list<'a>, list2: list<'a>) : list<'a> =>
-    switch list1 {
-        | list{} => list2
-        | list{h, ...rest} => List.add(append(rest, list2), h)
-    }
+
+let append = (list1: list<'a>, list2: list<'a>) : list<'a> => {
+  let rec inner = (acc, current) =>
+      switch current {
+          | list{} => acc
+          | list{h, ...rest} => inner(List.add(acc, h), rest)
+      }
+  inner(list2, List.reverse(list1))
+}
 
 
 let makeDrawCallback = (tree : t, ctx: Canvas2d.t) : (float => unit) => {
