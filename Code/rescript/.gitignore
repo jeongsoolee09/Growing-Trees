@@ -2,3 +2,4 @@ node_modules
 .merlin
 lib/
 node_modules/
+dist/main.js

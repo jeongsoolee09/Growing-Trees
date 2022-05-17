@@ -24,10 +24,10 @@ let resizeHandler = (_: Event.t) : unit => {
   CanvasElement.setWidth(canvas, stageWidth)
   CanvasElement.setHeight(canvas, stageHeight)
 
-  Canvas2d.scale(ctx, ~x=1., ~y=1.);
+  Canvas2d.scale(ctx, ~x=1., ~y=1.)
   Canvas2d.clearRect(ctx, ~x=0., ~y=0.,
                      ~w=Float.fromInt(stageWidth),
-                     ~h=Float.fromInt(stageHeight));
+                     ~h=Float.fromInt(stageHeight))
 }
 
 
