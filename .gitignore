@@ -5,3 +5,5 @@ node_modules/
 .merlin
 *.bs.js
 .log/
+.clj-kondo/
+/.lsp/
